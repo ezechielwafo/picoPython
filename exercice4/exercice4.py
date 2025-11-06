@@ -22,12 +22,10 @@ except ValueError:
 
 # ==================== PARAMÈTRES DE DÉTECTION ====================
 
-# Seuil ajusté à 12900, basé sur la calibration de votre microphone.
-# Si la LED ne réagit pas -> Diminuer ce nombre.
-# Si la LED clignote tout le temps -> Augmenter ce nombre.
-THRESHOLD = 12900           # Seuil de détection de crête sonore (ADC u16)
-MIN_BEAT_INTERVAL = 200     # Intervalle minimum entre battements (ms) - Anti-rebond
-SAMPLE_WINDOW = 50          # Fenêtre d'échantillonnage pour trouver le pic (ms)
+
+THRESHOLD = 12900           
+MIN_BEAT_INTERVAL = 200     
+SAMPLE_WINDOW = 50         
 
 # Paramètres pour le BONUS: Calcul du BPM et Sauvegarde
 BPM_HISTORY_SIZE = 60       # Taille de l'historique des BPM pour la moyenne par minute
@@ -86,9 +84,7 @@ def is_beat(sound_level):
     current_time = utime.ticks_ms()
     time_since_last = utime.ticks_diff(current_time, last_beat_time)
     
-    # Le battement est détecté si :
-    # 1. Le niveau dépasse le seuil (pic détecté)
-    # 2. L'intervalle minimum (anti-rebond) est respecté.
+
     if sound_level > THRESHOLD and time_since_last > MIN_BEAT_INTERVAL:
         return True
     return False
