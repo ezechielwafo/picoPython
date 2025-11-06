@@ -12,11 +12,11 @@ import ntptime
 
 # 1. Connexion à Internet (Étape 1, partie 1)
 # REMPLACEZ VOTRE_SSID ET VOTRE_MOT_DE_PASSE
-WIFI_SSID = "VOTRE_SSID"
-WIFI_PASSWORD = "VOTRE_MOT_DE_PASSE"
+WIFI_SSID = "Pixel_4887"
+WIFI_PASSWORD = ""
 
 # Configuration du Servo (Étape 3)
-SERVO_PIN = 14
+SERVO_PIN = 16 # CHANGEMENT: Utilisation de GPIO 16 comme demandé
 # Plage de PWM typique pour un servo (50Hz)
 PWM_FREQ = 50
 # Les valeurs de duty cycle (0-65535) correspondent généralement à ~0.5ms (0°) à ~2.5ms (180°)
@@ -32,7 +32,7 @@ button = Pin(BUTTON_PIN, Pin.IN, Pin.PULL_UP)
 
 # Décalages horaires en heures (exemple : UTC, UTC+1, UTC-5, etc.)
 TIMEZONES = [0, 1, 2, -5, 5, 8]
-current_tz_index = 0
+current_tz_index = 1
 
 # État de l'horloge pour le Bonus 2
 is_24h_mode = False
