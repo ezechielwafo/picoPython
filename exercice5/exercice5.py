@@ -1,8 +1,3 @@
-"""
-Objectif : Horloge pilotée par Servo Moteur, récupérant l'heure via Internet (NTP).
-Étapes : 1. Connexion WiFi/NTP. 2. Calcul d'angle. 3. Contrôle Servo.
-Bonus : Gestion du Fuseau Horaire (clic simple) et mode 24H (double clic).
-"""
 import network
 import utime
 from machine import Pin, PWM
@@ -10,11 +5,8 @@ import ntptime
 
 # ==================== CONFIGURATION INTERNET ET MATÉRIEL ====================
 
-# 1. Connexion à Internet (Étape 1, partie 1)
-# REMPLACEZ VOTRE_SSID ET VOTRE_MOT_DE_PASSE
 WIFI_SSID = "Pixel_4887"
-WIFI_PASSWORD = "" # <--- REMPLACEZ PAR VOTRE MOT DE PASSE REEL
-
+WIFI_PASSWORD = "" 
 # Configuration du Servo (Étape 3)
 SERVO_PIN = 16 # Utilisation de GPIO 16 (D16)
 PWM_FREQ = 50
